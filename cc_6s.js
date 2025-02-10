@@ -2,7 +2,7 @@
 // Write a function calculateProfit(costPrice, sellingPrice, unitsSold) that calculates total profit.
 function calculateProfit(costPrice, sellingPrice, unitsSold) {
     const profit = (sellingPrice - costPrice) * unitsSold;
-    console.log(`Total Profit: $${profit}`);//} 
+    console.log(`Total Profit: $${profit}`);} 
 /// (Test Data) - Testing the function
 calculateProfit(20, 30, 100);
 calculateProfit(50, 70, 200);
@@ -27,3 +27,14 @@ console.log(`Bonus: $${bonus}`);};
 /// (Test Data) - Testing the function
 calculateBonus(5000, "Excellent"); // Expected output: "Bonus: $1000"
 calculateBonus(7000, "Good");      // Expected output: "Bonus: $700"
+
+//Task 4 - Subscription Pricing Model
+//Write a function calculateSubscriptionCost(plan, months, discount = 0) that calculates cost.
+function calculateSubscriptionCost(plan, months, discount = 0) {
+    //"Basic" = $10/month, "Premium" = $20/month, "Enterprise" = $50/month
+    const rate = { "Basic": 10, "Premium": 20, "Enterprise": 50 };
+    let totalCost = (rate[plan] * months) - discount;
+    console.log(`Total Cost: $${totalCost}`);
+};
+calculateSubscriptionCost("Basic", 6, 10); // Expected output: "Total Cost: $50"
+calculateSubscriptionCost("Premium", 12, 0); // Expected output: "Total Cost: $240"
