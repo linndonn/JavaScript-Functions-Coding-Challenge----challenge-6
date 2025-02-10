@@ -53,9 +53,22 @@ convertCurrency(250, 0.85); // Expected output: "Converted Amount: $212.50"
 //Write a function applyBulkDiscount(orders, discountFunction) that applies a 10% discount on orders above $500.
 function applyBulkDiscount(orders, discountFunction) {
 let discountOrders = orders.map(discountFunction);
-console.log(discountOrders);
-}
+console.log(discountOrders);}
 /// (Test Data) - Testing the function
 let orders = [200, 600, 1200, 450, 800];
 applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount);
 // Expected output: [200, 540, 1080, 450, 720]
+
+//Task 7 - Business Expense Tracker
+//Write a funciton createExpenseTracker() that returns another function to add expenses and keep a running total.
+function createExpenseTracker() {
+    let Expenses = 0;
+ return function(charge) {
+ Expenses += charge;
+ return `Total Expenses: $${Expenses}`;
+};
+}; 
+/// (Test Data) - Testing the function
+let tracker = createExpenseTracker();
+console.log(tracker(200)); // Expected output: "Total Expenses: $200"
+console.log(tracker(150)); // Expected output: "Total Expenses: $350"
