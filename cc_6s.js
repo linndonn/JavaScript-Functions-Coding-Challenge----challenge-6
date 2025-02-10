@@ -33,8 +33,18 @@ calculateBonus(7000, "Good");      // Expected output: "Bonus: $700"
 function calculateSubscriptionCost(plan, months, discount = 0) {
     //"Basic" = $10/month, "Premium" = $20/month, "Enterprise" = $50/month
     const rate = { "Basic": 10, "Premium": 20, "Enterprise": 50 };
-    let totalCost = (rate[plan] * months) - discount;
+    const totalCost = (rate[plan] * months) - discount;
     console.log(`Total Cost: $${totalCost}`);
 };
 calculateSubscriptionCost("Basic", 6, 10); // Expected output: "Total Cost: $50"
 calculateSubscriptionCost("Premium", 12, 0); // Expected output: "Total Cost: $240"
+
+//Task 5 - Currency Conversion
+//Write a function convertCurrency(amount, exchangeRate) that returns the converted amount.
+function convertCurrency(amount, exchangeRate) {
+    const conversion = (amount * exchangeRate).toFixed(2);
+    console.log(`The Converted amount is: $${conversion}`);
+}
+/// (Test Data) - Testing the function
+convertCurrency(100, 1.1); // Expected output: "Converted Amount: $110.00"
+convertCurrency(250, 0.85); // Expected output: "Converted Amount: $212.50"
